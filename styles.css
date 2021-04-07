@@ -13,7 +13,6 @@ html {
 body {
   max-width: 100vw;
   max-height: calc(var(--vh, 1vh) * 100);
-  height: calc(var(--vh, 1vh) * 100);
   margin: 0px !important;
   font-family: "Roboto", sans-serif;
 }
@@ -148,6 +147,24 @@ a-scene {
   content: url(blue-arrow.svg);
 }
 
+.photo-holder {
+  min-height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.photo,
+.photo img {
+  width: 100%;
+  height: 100%;
+}
+
+body.map-body {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 .map-holder {
   height: 100%;
   position: relative;
@@ -244,9 +261,14 @@ input[type="radio"].toggle:checked + label:after {
 /* to disable landscape mode */
 
 @media screen and (orientation: landscape) {
+  body.map-body {
+    height: unset;
+  }
   .holder,
   .overlay,
-  #myEmbeddedScene {
+  #myEmbeddedScene,
+  .map-holder,
+  .photo-holder {
     transform: rotate(-90deg);
     transform-origin: left top;
     min-width: unset;
@@ -301,6 +323,16 @@ input[type="radio"].toggle:checked + label:after {
   }
   .map-button img {
     width: 18px;
+  }
+  input[type="radio"].toggle + label {
+    width: 160px;
+    font-size: 18px;
+  }
+  .btn {
+    padding: 19px;
+  }
+  input[type="radio"].toggle + label:after {
+    height: 60px;
   }
 }
 
