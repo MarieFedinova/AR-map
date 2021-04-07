@@ -334,6 +334,9 @@ input[type="radio"].toggle:checked + label:after {
   input[type="radio"].toggle + label:after {
     height: 60px;
   }
+  .guide {
+    padding: 0px 24px;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -365,5 +368,8 @@ input[type="radio"].toggle:checked + label:after {
   .map-button img {
     margin-left: 14px;
     width: 22px;
+  }
+  .guide {
+    padding: 0px 32px;
   }
 }
